@@ -36,6 +36,6 @@ class MainActivity : AppCompatActivity(), MainScreen.View {
     }
 
     override fun displayItems(items: List<String>) {
-        tvResult.text = items.joinToString { "$it " }
+        tvResult.text = items.joinToString { it }
     }
 }

@@ -1,6 +1,6 @@
 package com.artix.androidtests.mvp
 
-class MainScreenPresenter(private val model: MainScreen.Model) : MainScreen.Presenter {
+open class MainScreenPresenter(private val model: MainScreen.Model) : MainScreen.Presenter {
     private var view: MainScreen.View? = null
 
     override fun attachView(view: MainScreen.View) {

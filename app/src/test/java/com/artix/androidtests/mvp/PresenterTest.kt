@@ -14,7 +14,7 @@ import org.mockito.junit.MockitoJUnitRunner
  * Created by shs on 28.10.2017.
  */
 @RunWith(MockitoJUnitRunner::class)
-class MainScreenPresenterTest {
+class PresenterTest {
     @Mock
     private lateinit var view: MainScreen.View
     @Mock
@@ -57,9 +57,9 @@ class MainScreenPresenterTest {
             presenter.attachView(view)
             presenter.loadDataClicked()
 
-            verify(view, times(1)).showProgress()
+            verify(view).showProgress()
             verify(view).displayItems(anyList())
-            verify(view, times(1)).hideProgress()
+            verify(view).hideProgress()
         }
     }
 }
