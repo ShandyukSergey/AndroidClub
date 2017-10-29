@@ -15,7 +15,7 @@ open class MainScreenPresenter(private val model: MainScreen.Model) : MainScreen
 
     override fun loadDataClicked() {
         view?.showProgress()
-        view?.displayItems(model.loadData())
+        view?.displayItems(model.loadItems())
         view?.hideProgress()
     }
 }

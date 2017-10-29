@@ -6,7 +6,7 @@ package com.artix.androidtests.mvp
 interface MainScreen {
 
     interface Model {
-        fun loadData(): List<String>
+        fun loadItems(): List<String>
     }
 
     interface View {

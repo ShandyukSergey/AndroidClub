@@ -7,7 +7,8 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.*
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnitRunner
 
 /**
@@ -52,13 +53,13 @@ class PresenterTest {
     @Test
     fun testLoadDataClicked() {
         presenter?.let { presenter ->
-            `when`(model.loadData()).thenReturn(emptyList())
+            `when`(model.loadItems()).thenReturn(emptyList())
 
             presenter.attachView(view)
             presenter.loadDataClicked()
 
             verify(view).showProgress()
-            verify(view).displayItems(anyList())
+            verify(view).displayItems(emptyList())
             verify(view).hideProgress()
         }
     }
