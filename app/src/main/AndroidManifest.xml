@@ -3,7 +3,7 @@
 		  package="com.artix.androidtests">
 
 	<application
-		android:name=".app.AndroidTestsApplication"
+		android:name=".app.TestsApplication"
 		android:allowBackup="true"
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/app_name"

@@ -7,8 +7,8 @@ import com.artix.androidtests.injection.DaggerApplicationComponent
 /**
  * Created by User on 29.10.2017.
  */
-class AndroidTestsApplication : Application() {
+class TestsApplication : Application() {
     companion object {
-        val injector: ApplicationComponent = DaggerApplicationComponent.create()
+        var injector: ApplicationComponent = DaggerApplicationComponent.create()
     }
 }
