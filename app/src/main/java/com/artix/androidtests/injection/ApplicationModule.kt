@@ -9,8 +9,8 @@ import dagger.Provides
  * Created by User on 29.10.2017.
  */
 @Module
-class ApplicationModule {
+open class ApplicationModule {
 
     @Provides
-    fun provideApiClient(): ApiClient = ApiClientImpl()
+    open fun provideApiClient(): ApiClient = ApiClientImpl()
 }
