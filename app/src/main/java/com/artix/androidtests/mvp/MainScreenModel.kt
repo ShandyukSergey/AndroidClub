@@ -9,7 +9,7 @@ class MainScreenModel : MainScreen.Model {
     lateinit var apiClient: ApiClient
 
     init {
-        TestsApplication.injector.inject(this)
+        TestsApplication.applicationComponent.inject(this)
     }
 
     override fun loadItems(): List<String> = apiClient.loadData()
