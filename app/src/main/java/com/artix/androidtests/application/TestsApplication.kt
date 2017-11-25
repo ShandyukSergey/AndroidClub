@@ -1,4 +1,4 @@
-package com.artix.androidtests.app
+package com.artix.androidtests.application
 
 import android.app.Application
 import com.artix.androidtests.injection.ApplicationComponent

@@ -1,7 +1,7 @@
 package com.artix.androidtests.mvp
 
 import com.artix.androidtests.api.ApiClient
-import com.artix.androidtests.app.TestsApplication
+import com.artix.androidtests.application.TestsApplication
 import javax.inject.Inject
 
 class MainScreenModel : MainScreen.Model {

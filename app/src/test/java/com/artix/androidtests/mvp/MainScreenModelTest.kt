@@ -1,6 +1,6 @@
 package com.artix.androidtests.mvp
 
-import com.artix.androidtests.app.TestsApplication
+import com.artix.androidtests.application.TestsApplication
 import com.artix.androidtests.injection.DaggerApplicationComponent
 import com.artix.androidtests.injection.stub.TestApplicationModule
 import junit.framework.Assert.assertEquals

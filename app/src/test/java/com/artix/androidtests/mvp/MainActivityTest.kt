@@ -2,7 +2,6 @@ package com.artix.androidtests.mvp
 
 import android.widget.Button
 import android.widget.TextView
-import com.artix.androidtests.MainActivity
 import com.artix.androidtests.R
 import junit.framework.Assert.*
 import org.junit.Before
@@ -21,11 +20,11 @@ import org.robolectric.android.controller.ActivityController
  */
 @RunWith(RobolectricTestRunner::class)
 class MainActivityTest {
-    private lateinit var activityController: ActivityController<MainActivity>
+    private lateinit var activityController: ActivityController<MvpActivity>
 
     @Before
     fun setUp() {
-        activityController = Robolectric.buildActivity(MainActivity::class.java).create()
+        activityController = Robolectric.buildActivity(MvpActivity::class.java).create()
     }
 
     @Test
@@ -53,7 +52,7 @@ class MainActivityTest {
     @Ignore("verify doesn't work")
     @Test
     fun testThatPresenterStartLoading() {
-        val activity = activityController.start().get()
+        val activity = activityController.start().visible().get()
         val spyPresenter = spy(activity.presenter)
         val button = activity.findViewById<Button>(R.id.btnLoad)
         button.performClick()

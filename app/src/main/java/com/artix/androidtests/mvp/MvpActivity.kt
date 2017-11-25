@@ -1,14 +1,12 @@
-package com.artix.androidtests
+package com.artix.androidtests.mvp
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import com.artix.androidtests.mvp.MainScreen
-import com.artix.androidtests.mvp.MainScreenModel
-import com.artix.androidtests.mvp.MainScreenPresenter
+import com.artix.androidtests.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), MainScreen.View {
+class MvpActivity : AppCompatActivity(), MainScreen.View {
     override val presenter: MainScreen.Presenter = MainScreenPresenter(MainScreenModel())
 
     override fun onCreate(savedInstanceState: Bundle?) {
