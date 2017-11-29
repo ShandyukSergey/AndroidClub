@@ -1,6 +1,6 @@
 package com.artix.androidtests.redux
 
-import com.artix.androidtests.application.TestsApplication
+import com.artix.androidtests.application.TDDApplication
 import io.reactivex.observers.TestObserver
 import org.junit.After
 import org.junit.Before
@@ -14,12 +14,12 @@ class ReduxModelTest {
 
 	@Before
 	fun setUp() {
-		model = TestsApplication.reduxComponent().model()
+		model = TDDApplication.reduxComponent().model()
 	}
 
 	@After
 	fun tearDown() {
-		TestsApplication.releaseReduxComponent()
+		TDDApplication.releaseReduxComponent()
 		model = null
 	}
 

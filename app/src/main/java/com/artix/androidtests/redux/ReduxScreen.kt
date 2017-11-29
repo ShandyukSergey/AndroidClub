@@ -16,7 +16,7 @@ interface ReduxScreen {
 	interface Presenter : Redux.Presenter<View<State>>
 
 	interface View<in State> : Redux.View {
-		val loadItems: Observable<Any>
+		val loadItemsIntent: Observable<Any>
 
 		fun renderState(state: State)
 	}

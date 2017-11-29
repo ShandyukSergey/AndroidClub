@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.artix.androidtests.R
-import com.artix.androidtests.application.TestsApplication
+import com.artix.androidtests.application.TDDApplication
 import com.jakewharton.rxbinding2.view.clicks
 import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
 class ReduxActivity : AppCompatActivity() {
-	private val presenter = ReduxPresenter()
+	private val presenter = ReduxPresenter(AndroidSchedulers.mainThread())
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -20,7 +21,7 @@ class ReduxActivity : AppCompatActivity() {
 	override fun onStart() {
 		super.onStart()
 		presenter.onStart(object : ReduxScreen.View<State> {
-			override val loadItems: Observable<Any>
+			override val loadItemsIntent: Observable<Any>
 				get() = btnLoad.clicks().map { Any() }
 
 			override fun renderState(state: State) {
@@ -38,7 +39,7 @@ class ReduxActivity : AppCompatActivity() {
 	override fun onDestroy() {
 		super.onDestroy()
 		if (!isChangingConfigurations) {
-			TestsApplication.releaseReduxComponent()
+			TDDApplication.releaseReduxComponent()
 		}
 	}
 }

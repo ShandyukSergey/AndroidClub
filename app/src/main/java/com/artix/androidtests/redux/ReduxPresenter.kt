@@ -1,28 +1,31 @@
 package com.artix.androidtests.redux
 
-import com.artix.androidtests.application.TestsApplication
+import com.artix.androidtests.application.TDDApplication
 import com.develop.zuzik.redux.core.extension.asConsumer
 import com.develop.zuzik.redux.core.model.ReduxPresenter
-import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.Scheduler
 import javax.inject.Inject
 
 /**
  * Created by User on 25.11.2017.
  */
-class ReduxPresenter : ReduxPresenter<ReduxScreen.View<State>>(), ReduxScreen.Presenter {
+class ReduxPresenter(private val renderStateScheduler: Scheduler)
+	: ReduxPresenter<ReduxScreen.View<State>>(), ReduxScreen.Presenter {
+
 	@Inject
 	lateinit var model: ReduxScreen.Model
 
 	init {
-		TestsApplication.reduxComponent().inject(this)
+		TDDApplication.reduxComponent().inject(this)
 	}
 
 	override fun onStart(view: ReduxScreen.View<State>) {
-		intent(view.loadItems
+		intent(view
+				.loadItemsIntent
 				.subscribe(model.loadItemsAction.asConsumer()))
 		intent(model
 				.state
-				.observeOn(AndroidSchedulers.mainThread())
+				.observeOn(renderStateScheduler)
 				.subscribe({ view.renderState(it) }))
 	}
 }

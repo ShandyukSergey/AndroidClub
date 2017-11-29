@@ -9,7 +9,7 @@ import com.artix.androidtests.injection.redux.ReduxComponent
 /**
  * Created by User on 29.10.2017.
  */
-class TestsApplication : Application() {
+class TDDApplication : Application() {
 	companion object {
 		var applicationComponent: ApplicationComponent = DaggerApplicationComponent.create()
 		private var reduxComponent: ReduxComponent? = null
