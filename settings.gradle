@@ -1,1 +1,1 @@
-include ':Testing', ':ArchComponents'
+include ':Testing', ':ArchComponents', ':Dagger'
