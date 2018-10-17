@@ -8,9 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/ArchComponents" />
             <option value="$PROJECT_DIR$/Dagger" />
-            <option value="$PROJECT_DIR$/Testing" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
