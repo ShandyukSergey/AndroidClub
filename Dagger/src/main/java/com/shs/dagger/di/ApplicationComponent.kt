@@ -2,12 +2,12 @@ package com.shs.dagger.di
 
 import com.shs.dagger.App
 import dagger.Component
-import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
+import dagger.android.support.AndroidSupportInjectionModule
 
 @Component(modules = [
-	AndroidInjectionModule::class,
+	AndroidSupportInjectionModule::class,
 	AuthorizationActivityBindingModule::class,
-	MainActivityBindingModule::class
-])
+	MainActivityBindingModule::class,
+	ViewModelModule::class])
 interface ApplicationComponent : AndroidInjector<App>
